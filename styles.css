@@ -1,0 +1,313 @@
+:root {
+    --lm-bg: #01040f;
+    --lm-bg-content: #1b0c0c;
+    --lm-text: #010306;
+    --lm-text-alt: #070e19;
+    --lm-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+    --lm-shadow-inactive: 0px 16px 30px -10px rgba(0, 0, 0, 0.2);
+    --lm-icon-bg: brightness(100%);
+    /* Btn */
+    --btn: #0079ff;
+    --btn-hover: #60abff;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Mono", monospace;
+  }
+  
+  body {
+    background-color: var(--lm-bg);
+    font-size: 13px;
+   
+    width: 100%;
+    position: relative;
+    height: 100vh;
+  }
+  
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: bold;
+  color: rgb(0, 255, 170);
+
+}
+
+#btn-mode {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#mode-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+main {
+  margin-top: 30px;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Profile Container */
+.profile-container {
+  grid-column: 1 / 3;
+}
+
+.profile-content {
+  background-color:#c4f05c;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: var(--lm-shadow);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+}
+
+#avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.profile-info-wrapper {
+  flex: 1;
+}
+
+.profile-name {
+  margin-bottom: 4px;
+}
+
+#user {
+  font-size: 14px;
+}
+
+#date {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+#bio {
+  margin-top: 12px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.profile-stats-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.profile-stat {
+  text-align: center;
+}
+
+.stat-title {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.profile-bottom-wrapper {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 8px;
+}
+
+.profile-info:last-child {
+  margin-right: 0;
+}
+
+.bottom-icons {
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+}
+
+#location, #company {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+#page, #twitter {
+  font-size: 14px;
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Trending Repositories and Popular Developers */
+.trending-repos, .popular-developers {
+  margin-top: 30px;
+}
+.trending-repos h2{
+  color: #04f700;
+}
+.popular-developers h2{
+  color: #0091ff;
+}
+
+.repos-grid, .developers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.repo-card {
+  background-color: #6ff46d;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: var(--lm-shadow);
+  transition: transform var(--animation-duration) ease;
+}
+
+.dev-card
+{
+  background-color: #2385d0;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: var(--lm-shadow);
+  transition: transform var(--animation-duration) ease;
+}
+
+.dev-card:hover{
+  transform: scale(1.03);
+}
+.repo-card:hover{
+  transform: scale(1.03);
+}
+.repo-card a {
+  
+  font-weight: bold;
+}
+.dev-card a{
+  color: #010306;
+  
+  font-weight: bold;
+}
+
+.repo-card p {
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+
+.searchbar-container {
+  grid-column: 1 / 3;
+  position: relative;
+  background-color: var(--lm-bg-content);
+  border-radius: 15px;
+  box-shadow: var(--lm-shadow);
+  display: flex;
+  height: 100%;
+  padding: 6px;
+  align-items: center;
+}
+
+#input {
+  border: none;
+  width: 100%;
+  outline: none;
+  background: none;
+  color: var(--lm-text);
+  padding-left: 50px;
+}
+
+#input::placeholder {
+  color: var(--lm-text);
+  letter-spacing: -0.5px;
+  font-size: 13px;
+}
+
+.searchbar-container img {
+  height: 20px;
+  width: 20px;
+  padding: 0 10px 0px 16px;
+}
+
+.btn-search {
+  min-width: 84px;
+  padding: 12px 16px;
+  background-color: var(--btn);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.btn-search:hover {
+  cursor: pointer;
+  background-color: var(--btn-hover);
+}
+
+.btn-search:active {
+  transform: scale(0.975);
+}
+
+.error {
+  position: absolute;
+  color: red;
+  font-weight: bold;
+  right: 10px;
+  top: -25px;
+}
+a{
+  color: black;
+  font: bold;
+}
+
+/* ... Previous styles ... */
+
+/* Add hover effect on profile cards */
+.profile-container {
+  background-color: var(--lm-bg-content);
+  border-radius: 15px;
+  box-shadow: var(--lm-shadow);
+  padding: 24px;
+  transition: transform var(--animation-duration) ease;
+}
+
+.profile-container:hover {
+  transform: scale(1.03);
+}
+
+/* ... Rest of the styles ... */
+/* ... Previous styles ... */
+
+/* Add zoom-in hover effect on small profile cards */
+
+/* ... Rest of the styles ... */
